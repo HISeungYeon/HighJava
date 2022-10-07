@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>JavaNetworkTest</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>src/homework/MultiChatClient.java</name>
+			<type>1</type>
+			<location>//Desktop-0u4r8mb/공유폴더/고급자바/고급자바과제템플릿/JavaNetwork/멀티챗 귓속말기능/안하용/MultiChatClient.java</location>
+		</link>
+	</linkedResources>
+</projectDescription>

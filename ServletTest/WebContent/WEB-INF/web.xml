@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name>ServletTest</display-name>
+
+	<servlet>
+		<servlet-name>T01ServletLifeCycle</servlet-name>
+		<servlet-class>kr.or.ddit.basic.T01ServletLifeCycle</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>T01ServletLifeCycle</servlet-name>
+		<url-pattern>/T01ServletLifeCycle</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>T02ServletTest</servlet-name>
+		<servlet-class>kr.or.ddit.basic.T02ServletTest</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>T02ServletTest</servlet-name>
+		<url-pattern>/T02ServletTest</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>T03ServletParameterTest</servlet-name>
+		<servlet-class>kr.or.ddit.basic.T03ServletParameterTest</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>T03ServletParameterTest</servlet-name>
+		<url-pattern>/T03ServletParameterTest</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>T04ErrorHandler</servlet-name>
+		<servlet-class>kr.or.ddit.basic.T04ErrorHandler</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>T04ErrorHandler</servlet-name>
+		<url-pattern>/T04ErrorHandler</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>T05ServletCookieTest</servlet-name>
+		<servlet-class>kr.or.ddit.basic.T05ServletCookieTest</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>T05ServletCookieTest</servlet-name>
+		<url-pattern>/T05ServletCookieTest</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>T06ServletSessionTest</servlet-name>
+		<servlet-class>kr.or.ddit.basic.T06ServletSessionTest</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>T06ServletSessionTest</servlet-name>
+		<url-pattern>/T06ServletSessionTest</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>T07ServletContextTest</servlet-name>
+		<servlet-class>kr.or.ddit.basic.T07ServletContextTest</servlet-class>
+		<init-param>
+			<param-name>init-param</param-name>
+			<param-value>서브릿도 초기화 파라미터설정 가능합니다.</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>T07ServletContextTest</servlet-name>
+		<url-pattern>/T07ServletContextTest</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>T09ServletRequestListenerTest</servlet-name>
+		<servlet-class>kr.or.ddit.basic.T09ServletRequestListenerTest</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>T09ServletRequestListenerTest</servlet-name>
+		<url-pattern>/T09ServletRequestListenerTest</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>T10HttpSessionListenerTest</servlet-name>
+		<servlet-class>kr.or.ddit.basic.T10HttpSessionListenerTest</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>T10HttpSessionListenerTest</servlet-name>
+		<url-pattern>/T10HttpSessionListenerTest</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>T11ServletContextListenerTest</servlet-name>
+		<servlet-class>kr.or.ddit.basic.T11ServletContextListenerTest</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>T11ServletContextListenerTest</servlet-name>
+		<url-pattern>/T11ServletContextListenerTest</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>T12ImageServlet</servlet-name>
+		<servlet-class>kr.or.ddit.basic.T12ImageServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>T12ImageServlet</servlet-name>
+		<url-pattern>/T12ImageServlet</url-pattern>
+	</servlet-mapping>
+	
+	
+	<filter>
+		<filter-name>T08ServletFilter</filter-name>
+		<filter-class>kr.or.ddit.basic.T08ServletFilter</filter-class>
+		<init-param>
+			<param-name>init-param</param-name>
+			<param-value>초기화파라미터 입니다.</param-value>
+		</init-param>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>T08ServletFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+		<filter-name>T08ServletFilter2</filter-name>
+		<filter-class>kr.or.ddit.basic.T08ServletFilter2</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>T08ServletFilter2</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<listener>
+		<listener-class>kr.or.ddit.basic.MyServletRequestListener</listener-class>
+	</listener>
+	
+	<listener>
+		<listener-class>kr.or.ddit.basic.MyHttpSessionListener</listener-class>
+	</listener>
+	
+	<listener>
+		<listener-class>kr.or.ddit.basic.MyServletContextListener</listener-class>
+	</listener>
+	
+	
+	<error-page>
+		<error-code>404</error-code>
+		<location>/T04ErrorHandler</location>
+	</error-page>
+	
+	<error-page>
+		<exception-type>javax.servlet.servletException</exception-type>
+		<!-- java.lang.Throwable 모든 예외 여기로 던져짐 --> 
+		<location>/T04ErrorHandler</location>
+	</error-page>
+	
+	<session-config>
+		<session-timeout>1</session-timeout> <!-- 분단위 -->
+	</session-config>
+	
+</web-app>
